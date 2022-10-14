@@ -4,29 +4,29 @@ import MoonIcon from "./components/MoonIcon.jsx";
 const App = () => {
   return (
     <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
-      <header className="container mx-auto px-4">
+      <header className="container mx-auto px-4 pt-8">
         <div className="flex justify-between">
-          <h1 className="text-white text-3xl font-semibold uppercase tracking-[0.3em]">
-            TODO
+          <h1 className="text-3xl font-semibold uppercase tracking-[0.3em] text-white">
+            Todo
           </h1>
           <button>
             <MoonIcon />
           </button>
         </div>
         {/* overglow-hidden es para que no se desborde */}
-        <form className="flex items-center gap-4 overflow-hidden bg-white border rounded-md py-4 px-4">
+        <form className="mt-8 flex items-center gap-4 overflow-hidden rounded-md bg-white py-4 px-4">
           <span className="inline-block w-5 h-5 rounded-full border-2"></span>
           <input
             type="text"
             placeholder="Create a new todo..."
-            className="w-full text-gray-400 focus:outline-none"
+            className="w-full text-gray-400 outline-none"
           />
         </form>
       </header>
       <main className="container mx-auto mt-8 px-4">
         <div className="rounded-md bg-white [&>article]:p-4">
           {/* ARTICULOS */}
-          <article className="flex gap-4 border-b">
+          <article className="flex gap-4 border-b gray-400">
             <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
             <p className="grow text-gray-600">complete online Javascript</p>
             {/* Crear componente CROSS-ICON */}
@@ -34,7 +34,7 @@ const App = () => {
               <CrossIcon />
             </button>
           </article>
-          <article className="flex gap-4 border-b">
+          <article className="flex gap-4 border-b gray-400">
             <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
             <p className="grow text-gray-600">complete online Javascript</p>
             {/* Crear componente CROSS-ICON */}
@@ -42,7 +42,7 @@ const App = () => {
               <CrossIcon />
             </button>
           </article>
-          <article className="flex gap-4 border-b">
+          <article className="flex gap-4 border-b gray-400">
             <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
             <p className="grow text-gray-600">complete online Javascript</p>
             {/* Crear componente CROSS-ICON */}
@@ -65,7 +65,7 @@ const App = () => {
           <button className="hover:text-blue-500">Completed</button>
         </div>
       </section>
-      <p className="text-center">Drag and drop to reorder list</p>
+      <p className="mt-8 text-center">Drag and drop to reorder list</p>
     </div>
   );
 };
