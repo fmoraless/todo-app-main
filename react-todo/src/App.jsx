@@ -51,7 +51,7 @@ const App = () => {
             </button>
           </article>
 
-          <section className="flex justify-between">
+          <section className="flex justify-between py-4 px-4">
             <span className="text-gray-400">5 items lef</span>
             <button className="text-gray-400">Clear completed</button>
           </section>
