@@ -1,12 +1,12 @@
-import CrossIcon from "./icons/CrossIcon.jsx";
+import IconCross from "./icons/IconCross.jsx";
 import TodoItem from "./TodoItem.jsx";
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
   return (
     <div className="rounded-t-md bg-white [&>article]:p-4 mt-8">
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
     </div>
   );
 };
