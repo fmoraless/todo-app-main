@@ -1,7 +1,7 @@
 import IconCross from "./icons/IconCross.jsx";
 import IconCheck from "./icons/IconCheck.jsx";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, removeTodo, updateTodo }) => {
   const { id, title, completed } = todo;
   return (
     <article className="flex gap-4 border-b gray-400">
@@ -9,17 +9,21 @@ const TodoItem = ({ todo }) => {
         <IconCheck />
       </button>*/}
 
-      {/*
-        CONTINUAR CON LOS ESTILOS DE LOS BOTONES DE ACUERDO A CONDICION DE COMPLETED 2 HRAS CON 08 MIN
-        */}
       <button
-        className="flex h-5 w-5 flex-none rounded-full border-2
-        bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex justify-center items-center"
+        className={`h-5 w-5 flex-none rounded-full border-2 ${
+          completed
+            ? "flex bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex justify-center items-center"
+            : "inline-block"
+        }`}
+        onClick={() => updateTodo(id)}
       >
-        <IconCheck />
+        {/*cuando el ternario no tiene un caso contrario (else), se puede usar un && */}
+        {completed && <IconCheck />}
       </button>
-      <p className="grow text-gray-600">{title}</p>
-      <button className="flex-none">
+      <p className={`grow text-gray-600 ${completed && "line-through"}`}>
+        {title}
+      </p>
+      <button className="flex-none" onClick={() => removeTodo(id)}>
         <IconCross />
       </button>
     </article>
